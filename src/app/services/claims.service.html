@@ -1,0 +1,16 @@
+<div class="form-container">
+  <form [formGroup]="claimForm" (ngSubmit)="onSubmit()">
+    <input formControlName="branchCode" placeholder="Branch Code" />
+    <input formControlName="invoiceNumber" placeholder="Invoice Number" />
+
+    Approval Form Upload
+    <button type="button" (click)="triggerFileInput('approvalForm')">Upload Approval</button>
+    <input #approvalInput type="file" hidden (change)="onFileSelected($event, 'approvalForm')" />
+
+    Customer Clearance Upload
+     <button type="button" (click)="triggerFileInput('customerClearanceForm')">Upload Clearance</button>
+    <input #clearanceInput type="file" hidden (change)="onFileSelected($event, 'customerClearanceForm')" />
+
+    <button type="submit">Submit</button>
+  </form>
+</div>  

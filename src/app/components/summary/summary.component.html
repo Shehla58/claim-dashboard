@@ -1,0 +1,224 @@
+<!-- Navbar -->
+<!-- <nav class="navbar">
+  <div class="container">
+    <img src="assets/images/image.png" alt="Logo" class="logo" />
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Solutions</a></li>
+      <li><a href="#">Platforms</a></li>
+      <li><a href="#">Articles</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <span class="lang">العربية</span>
+      <button class="request-btn">Request Service</button>
+    </div>
+  </div>
+</nav> -->
+
+<!-- Page Title -->
+<!-- <section class="summary-hero">
+  <h1>Platforms Overview & Key Insights</h1>
+  <p class="subtitle">Discover our suite of AI-powered platforms designed to streamline business operations, enhance compliance, and drive digital transformation.</p>
+</section> -->
+
+<!-- Platform Sections -->
+<!-- <section class="platform-section" *ngFor="let platform of platforms; let i = index">
+  <div class="platform-title-row" *ngIf="i === 0">
+    <h2>{{ platform.title }} <img src="assets/images/title-icon.png" alt="" /></h2>
+    <p class="platform-desc">{{ platform.desc }}</p>
+  </div>
+  <div class="platform-content-row" [ngClass]="{ 'reverse': i % 2 === 1 }">
+    <div class="platform-card">
+      <img [src]="platform.image" alt="{{ platform.name }} Card" />
+    </div>
+    <div class="platform-details">
+      <h3>{{ platform.title }}</h3>
+      <p>{{ platform.desc }}</p>
+      <div class="platform-stats">
+        <div class="stat" *ngFor="let stat of platform.stats">
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+      <button class="primary-btn">{{ platform.cta }}</button>
+      <div class="platform-links">
+        <a *ngFor="let link of platform.links" href="#"><span class="material-icons">share</span></a>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Footer -->
+<!-- <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <img src="assets/images/image.png" alt="Logo" class="footer-logo" />
+      <p>Lorem ipsum dolor sit amet consectetur. Quam cras massa fermentum in quis neque elementum. Tortor bibendum a nulla orci morbi.</p>
+      <div class="footer-socials">
+        <a href="#"><span class="material-icons">facebook</span></a>
+        <a href="#"><span class="material-icons">twitter</span></a>
+        <a href="#"><span class="material-icons">linkedin</span></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li>Service #1</li>
+          <li>Service #2</li>
+          <li>Service #3</li>
+          <li>Service #4</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Products</h5>
+        <ul>
+          <li>Omana</li>
+          <li>Muqeem</li>
+          <li>Munadij</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li>Links</li>
+          <li>Links</li>
+          <li>Links</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>Contact</li>
+          <li>Contact</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>All Rights Reserved ©Wajjad</span>
+    <span>Privacy And Policy</span>
+  </div>
+</footer> -->
+
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <img src="assets/images/image.png" alt="Logo" class="logo" />
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Solutions</a></li>
+      <li><a href="#">Platforms</a></li>
+      <li><a href="#">Articles</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <span class="lang">العربية</span>
+      <button class="request-btn">Request Service</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Image -->
+<div class="summary-hero-img">
+  <img src="assets/images/summaryimg.png" alt="Summary Hero" />
+</div>
+
+<!-- Page Title -->
+<section class="summary-hero">
+  <h1>Platforms Overview & Key Insights</h1>
+  <p class="subtitle">Discover our suite of AI-powered platforms designed to streamline business operations, enhance compliance, and drive digital transformation.</p>
+</section>
+
+<!-- Platform Sections -->
+<section class="platform-section" *ngFor="let platform of platforms; let i = index">
+  <div class="platform-title-row" *ngIf="i === 0">
+    <h2>{{ platform.title }} <img src="assets/images/title-icon.png" alt="" /></h2>
+    <p class="platform-desc">{{ platform.desc }}</p>
+  </div>
+  <div class="platform-content-row" [ngClass]="{ 'reverse': i % 2 === 1 }">
+    <div class="platform-card">
+      <img [src]="platform.image" alt="{{ platform.name }} Card" />
+    </div>
+    <div class="platform-details">
+      <h3>{{ platform.title }}</h3>
+      <p>{{ platform.desc }}</p>
+      <div class="platform-stats">
+        <div class="stat" *ngFor="let stat of platform.stats">
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+      <button class="primary-btn">{{ platform.cta }}</button>
+      <div class="platform-links">
+        <a *ngFor="let link of platform.links" [href]="link.url" target="_blank">
+          <img [src]="link.icon" alt="icon" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <img src="assets/images/image.png" alt="Logo" class="footer-logo" />
+      <p>Lorem ipsum dolor sit amet consectetur. Quam cras massa fermentum in quis neque elementum. Tortor bibendum a nulla orci morbi.</p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+      </div>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li>Service #1</li>
+          <li>Service #2</li>
+          <li>Service #3</li>
+          <li>Service #4</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Products</h5>
+        <ul>
+          <li>Omana</li>
+          <li>Muqeem</li>
+          <li>Munadij</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li>Links</li>
+          <li>Links</li>
+          <li>Links</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>Contact</li>
+          <li>Contact</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>All Rights Reserved ©Wajjad</span>
+    <span>Privacy And Policy</span>
+  </div>
+</footer>

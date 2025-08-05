@@ -1,0 +1,552 @@
+<!-- <form [formGroup]="claimForm" (ngSubmit)="submit()" class="claim-form">
+  <!- Branch Details -->
+  <!-- <div>
+    <label>Branch Code:</label>
+    <input type="text" formControlName="branchCode" [readonly]="!isEditable" />
+  </div>
+
+  <div>
+    <label>POS Code:</label>
+    <input type="text" formControlName="posCode" [readonly]="!isEditable" />
+  </div>
+
+  <div>
+    <label>Branch Name:</label>
+    <input type="text" formControlName="branchName" [readonly]="!isEditable" />
+  </div> -->
+
+  <!-- Insurance Details -->
+  <!-- <div>
+    <label>Insurance Company Code:</label>
+    <input type="text" formControlName="insuranceCompanyCode" [readonly]="!isEditable" />
+  </div>
+
+  <div>
+    <label>Insurance Company Name:</label>
+    <input type="text" formControlName="insuranceCompanyName" [readonly]="!isEditable" />
+  </div> -->
+
+  <!-- Claim Details -->
+  <!-- <div>
+    <label>Invoice Number:</label>
+    <input type="text" formControlName="invoiceNumber" [readonly]="!isEditable" />
+  </div>
+
+  <div>
+    <label>WIP Number:</label>
+    <input type="text" formControlName="wipNumber" [readonly]="!isEditable" />
+  </div>
+
+  <div>
+    <label>Full Claim Number:</label>
+    <input type="text" formControlName="fullClaimNumber" [readonly]="!isEditable" />
+  </div> -->
+
+  <!-- Approval Form Upload -->
+  <!-- <div>
+    <label>Approval Form:</label>
+    <input
+      type="text"
+      formControlName="approvalForm"
+      readonly
+      (click)="triggerFileInput('approvalForm')"
+      [style.cursor]="isEditable ? 'pointer' : 'default'"
+    />
+    <input
+      type="file"
+      #approvalInput
+      hidden
+      (change)="handleFileInput($event, 'approvalForm')"
+    />
+  </div> -->
+
+  <!-- Clearance Form Upload -->
+  <!-- <div>
+    <label>Customer Clearance Form:</label>
+    <input
+      type="text"
+      formControlName="customerClearanceForm"
+      readonly
+      (click)="triggerFileInput('customerClearanceForm')"
+      [style.cursor]="isEditable ? 'pointer' : 'default'"
+    />
+    <input
+      type="file"
+      #clearanceInput
+      hidden
+      (change)="handleFileInput($event, 'customerClearanceForm')"
+    />
+  </div> -->
+
+  <!-- Buttons -->
+  <!-- <div class="form-actions">
+    <button type="submit" [disabled]="!claimForm.valid || !isEditable">Submit</button>
+    <button type="button" (click)="onClose.emit()">Close</button>
+  </div>
+</form>  -->
+
+<!-- <form *ngIf="claimForm" [formGroup]="claimForm" (ngSubmit)="submit()" class="claim-form">
+  <!- Branch Details -->
+  <!-- <div>
+    <label>Branch Code:</label>
+    <input type="text" formControlName="branchCode" [readonly]="!isEditable" />
+  </div>
+
+  <div>
+    <label>POS Code:</label>
+    <input type="text" formControlName="posCode" [readonly]="!isEditable" />
+  </div>
+
+  <div>
+    <label>Branch Name:</label>
+    <input type="text" formControlName="branchName" [readonly]="!isEditable" />
+  </div>
+
+  <!-Insurance Details -->
+  <!-- <div>
+    <label>Insurance Company Code:</label>
+    <input type="text" formControlName="insuranceCompanyCode" [readonly]="!isEditable" />
+  </div>
+
+  <div>
+    <label>Insurance Company Name:</label>
+    <input type="text" formControlName="insuranceCompanyName" [readonly]="!isEditable" />
+  </div> -->
+
+  <!-- Claim Details -->
+  <!-- <div>
+    <label>Invoice Number:</label>
+    <input type="text" formControlName="invoiceNumber" [readonly]="!isEditable" />
+  </div>
+
+  <div>
+    <label>WIP Number:</label>
+    <input type="text" formControlName="wipNumber" [readonly]="!isEditable" />
+  </div>
+
+  <div>
+    <label>Full Claim Number:</label>
+    <input type="text" formControlName="fullClaimNumber" [readonly]="!isEditable" />
+  </div>  -->
+
+  <!-- Approval Form Upload -->
+  <!-- <div>
+    <label>Approval Form:</label>
+    <input
+      type="text"
+      formControlName="approvalForm"
+      readonly
+      (click)="triggerFileInput('approvalForm')"
+      [style.cursor]="isEditable ? 'pointer' : 'default'"
+    />
+    <input
+      type="file"
+      #approvalInput
+      hidden
+      (change)="handleFileInput($event, 'approvalForm')"
+    />
+  </div> -->
+
+  <!-- Clearance Form Upload -->
+  <!-- <div>
+    <label>Customer Clearance Form:</label>
+    <input
+      type="text"
+      formControlName="customerClearanceForm"
+      readonly
+      (click)="triggerFileInput('customerClearanceForm')"
+      [style.cursor]="isEditable ? 'pointer' : 'default'"
+    />
+    <input
+      type="file"
+      #clearanceInput
+      hidden
+      (change)="handleFileInput($event, 'customerClearanceForm')"
+    />
+  </div>
+
+  <!- Buttons -->
+  <!-- <div class="form-actions">
+    <button type="submit" [disabled]="!claimForm.valid || !isEditable">Submit</button>
+    <button type="button" (click)="onClose.emit()">Close</button>
+  </div> 
+</form>  -->
+
+
+<!-- <div class="modal-backdrop">
+  <div class="modal-container">
+    <form *ngIf="claimForm" [formGroup]="claimForm" (ngSubmit)="submit()" class="modal-form">
+      <h2 class="form-title">Claim Form</h2>
+
+      <!- Branch Details -->
+      <!-- <div class="form-row">
+        <div class="form-group">
+          <label>Branch Code:</label>
+          <input type="text" formControlName="branchCode" [readonly]="!isEditable" />
+        </div>
+        <div class="form-group">
+          <label>POS Code:</label>
+          <input type="text" formControlName="posCode" [readonly]="!isEditable" />
+        </div>
+        <div class="form-group">
+          <label>Branch Name:</label>
+          <input type="text" formControlName="branchName" [readonly]="!isEditable" />
+        </div>
+      </div> -->
+
+      <!-- Insurance Details -->
+      <!-- <div class="form-row">
+        <div class="form-group">
+          <label>Insurance Company Code:</label>
+          <input type="text" formControlName="insuranceCompanyCode" [readonly]="!isEditable" />
+        </div>
+        <div class="form-group">
+          <label>Insurance Company Name:</label>
+          <input type="text" formControlName="insuranceCompanyName" [readonly]="!isEditable" />
+        </div>
+        <div class="form-group">
+          <label>Invoice Number:</label>
+          <input type="text" formControlName="invoiceNumber" [readonly]="!isEditable" />
+        </div>
+      </div> -->
+
+      <!-- Claim Details -->
+      <!-- <div class="form-row">
+        <div class="form-group">
+          <label>WIP Number:</label>
+          <input type="text" formControlName="wipNumber" [readonly]="!isEditable" />
+        </div>
+        <div class="form-group">
+          <label>Full Claim Number:</label>
+          <input type="text" formControlName="fullClaimNumber" [readonly]="!isEditable" />
+        </div>
+        <div class="form-group">
+          <label>Approval Form:</label>
+          <input
+            type="text"
+            formControlName="approvalForm"
+            readonly
+            (click)="triggerFileInput('approvalForm')"
+            [style.cursor]="isEditable ? 'pointer' : 'default'"
+          />
+          <input
+            type="file"
+            #approvalInput
+            hidden
+            (change)="handleFileInput($event, 'approvalForm')"
+          />
+        </div>
+      </div> -->
+
+      <!-- Clearance Form -->
+      <!-- <div class="form-row">
+        <div class="form-group">
+          <label>Customer Clearance Form:</label>
+          <input
+            type="text"
+            formControlName="customerClearanceForm"
+            readonly
+            (click)="triggerFileInput('customerClearanceForm')"
+            [style.cursor]="isEditable ? 'pointer' : 'default'"
+          />
+          <input
+            type="file"
+            #clearanceInput
+            hidden
+            (change)="handleFileInput($event, 'customerClearanceForm')"
+          />
+        </div>
+      </div> -->
+
+      <!-- Buttons -->
+      <!-- <div class="form-actions">
+        <button type="submit" [disabled]="!claimForm.valid || !isEditable">Submit</button>
+        <button type="button" (click)="onClose.emit()">Close</button>
+      </div>
+    </form>
+  </div> -->
+<!-- </div>  -->
+
+
+
+<!-- <div class="modal-backdrop">
+  <div class="modal-container">
+    <form *ngIf="claimForm" [formGroup]="claimForm" (ngSubmit)="submit()" class="modal-form">
+      <h2 class="form-title">Claim Form</h2>
+
+      <!- Branch Details -->
+      <!-- <div class="form-row">
+        <div class="form-group">
+          <label>Branch Code:</label>
+          <input type="text" formControlName="branchCode" [readonly]="!isEditable" />
+        </div>
+        <div class="form-group">
+          <label>POS Code:</label>
+          <input type="text" formControlName="posCode" [readonly]="!isEditable" />
+        </div>
+        <div class="form-group">
+          <label>Branch Name:</label>
+          <input type="text" formControlName="branchName" [readonly]="!isEditable" />
+        </div>
+      </div> -->
+
+      <!-- Insurance Details -->
+      <!-- <div class="form-row">
+        <div class="form-group">
+          <label>Insurance Company Code:</label>
+          <input type="text" formControlName="insuranceCompanyCode" [readonly]="!isEditable" />
+        </div>
+        <div class="form-group">
+          <label>Insurance Company Name:</label>
+          <input type="text" formControlName="insuranceCompanyName" [readonly]="!isEditable" />
+        </div>
+        <div class="form-group">
+          <label>Invoice Number:</label>
+          <input type="text" formControlName="invoiceNumber" [readonly]="!isEditable" />
+        </div>
+      </div> -->
+
+      <!-- Claim Details -->
+      <!-- <div class="form-row">
+        <div class="form-group">
+          <label>WIP Number:</label>
+          <input type="text" formControlName="wipNumber" [readonly]="!isEditable" />
+        </div>
+        <div class="form-group">
+          <label>Full Claim Number:</label>
+          <input type="text" formControlName="fullClaimNumber" [readonly]="!isEditable" />
+        </div>
+        <div class="form-group">
+          <label>Approval Form:</label>
+          <input
+            type="text"
+            formControlName="approvalForm"
+            readonly
+            (click)="triggerFileInput('approvalForm')"
+            [style.cursor]="isEditable ? 'pointer' : 'default'"
+          />
+          <input
+            type="file"
+            #approvalInput
+            hidden
+            (change)="handleFileInput($event, 'approvalForm')"
+          />
+        </div>
+      </div> -->
+
+      <!-- Clearance Form -->
+      <!-- <div class="form-row">
+        <div class="form-group clearance-group">
+          <label>Customer Clearance Form:</label>
+          <input
+            type="text"
+            formControlName="customerClearanceForm"
+            readonly
+            (click)="triggerFileInput('customerClearanceForm')"
+            [style.cursor]="isEditable ? 'pointer' : 'default'"
+          />
+          <input
+            type="file"
+            #clearanceInput
+            hidden
+            (change)="handleFileInput($event, 'customerClearanceForm')"
+          />
+        </div>
+      </div> -->
+
+      <!-- Buttons -->
+      <!-- <div class="form-actions">
+        <button type="submit" [disabled]="!claimForm.valid || !isEditable">Submit</button>
+        <button type="button" (click)="onClose.emit()">Close</button>
+      </div>
+    </form>
+  </div> -->
+<!-- </div>  -->
+
+<!-- <div class="claim-form-container">
+  <div class="text-fields-grid">
+    <input type="text" placeholder="Text Field" />
+    <input type="text" placeholder="Text Field" />
+    <input type="text" placeholder="Text Field" />
+    <input type="text" placeholder="Text Field" />
+    <input type="text" placeholder="Text Field" />
+    <input type="text" placeholder="Text Field" />
+  </div>
+
+  <div class="form-row">
+    <label>Full Claim Number</label>
+    <input type="text" placeholder="// / / /" />
+  </div>
+
+  <div class="form-row">
+    <label>Approval Form</label>
+    <input type="text" placeholder="// / / /" />
+  </div>
+
+  <div class="form-row">
+    <label>Customer Clearance Form</label>
+    <input type="text" value="CL/1101/MJ/PCL/23/P/24/4318" />
+  </div>
+
+  <button class="submit-btn">Submit</button>
+</div>
+ -->
+
+ <!-- <div class="claim-form-wrapper">
+  <div class="grid-row">
+    <input type="text" placeholder="Text Field" />
+    <input type="text" placeholder="Text Field" />
+    <input type="text" placeholder="Text Field" />
+  </div>
+
+  <div class="grid-row">
+    <input type="text" placeholder="Text Field" />
+    <input type="text" placeholder="Text Field" />
+    <input type="text" placeholder="Text Field" />
+  </div>
+
+  <div class="grid-row two-columns">
+    <div class="form-field">
+      <label>Full Claim Number</label>
+      <input type="text" placeholder="// / / /" />
+    </div>
+    <div class="form-field">
+      <label>Approval Form</label>
+      <input type="text" placeholder="// / / /" />
+    </div>
+  </div>
+
+  <div class="grid-row single-column">
+    <div class="form-field">
+      <label>Customer Clearance Form</label>
+      <input type="text" value="CL/1101/MJ/PCL/23/P/24/4318" />
+    </div>
+  </div>
+
+  <div class="submit-button-wrapper">
+    <button class="submit-btn">Submit</button>
+  </div>
+</div> -->
+
+<!-- <div class="claim-form-wrapper" [formGroup]="claimForm">
+  <div class="grid-row">
+    <input type="text" placeholder="Branch Code" formControlName="branchCode" />
+    <input type="text" placeholder="POS Code" formControlName="posCode" />
+    <input type="text" placeholder="Branch Name" formControlName="branchName" />
+  </div>
+
+  <div class="grid-row">
+    <input
+      type="text"
+      placeholder="Insurance Company Code"
+      formControlName="insuranceCompanyCode"
+    />
+    <input
+      type="text"
+      placeholder="Insurance Company Name"
+      formControlName="insuranceCompanyName"
+    />
+    <input
+      type="text"
+      placeholder="Invoice Number"
+      formControlName="invoiceNumber"
+    />
+  </div>
+
+  <div class="grid-row">
+    <input
+      type="text"
+      placeholder="WIP Number"
+      formControlName="wipNumber"
+    />
+  </div>
+
+  <div class="grid-row two-columns">
+    <div class="form-field">
+      <label>Full Claim Number</label>
+      <input
+        type="text"
+        placeholder="// / / /"
+        formControlName="fullClaimNumber"
+      />
+    </div>
+    <div class="form-field">
+      <label>Approval Form</label>
+      <input
+        type="text"
+        placeholder="// / / /"
+        formControlName="approvalForm"
+      />
+    </div>
+  </div>
+
+  <div class="grid-row single-column">
+    <div class="form-field">
+      <label>Customer Clearance Form</label>
+      <input
+        type="text"
+        formControlName="customerClearanceForm"
+        placeholder="CL/1101/MJ/PCL/23/P/24/4318"
+      />
+    </div>
+  </div>
+
+   <div class="submit-button-wrapper">
+    <!- <button class="submit-btn" (click)="submit()" [disabled]="claimForm.invalid">
+      Submit
+    </button> --> 
+    <!-- <button class="submit-btn"
+            (click)="submit()"
+            [disabled]="claimForm.invalid">
+      Submit
+    </button>
+    <button class="cancel-btn" (click)="cancel()">Cancel</button>
+
+  </div>
+</div>  -->
+
+ <div class="claim-form-wrapper" [formGroup]="claimForm">
+  <!-- <!- ❌ Close icon (top right corner) -->
+  <div class="close-icon" (click)="cancel()">✖</div>
+
+  <div class="grid-row">
+    <input type="text" placeholder="Branch Code" formControlName="branchCode" />
+    <input type="text" placeholder="POS Code" formControlName="posCode" />
+    <input type="text" placeholder="Branch Name" formControlName="branchName" />
+  </div>
+
+  <div class="grid-row">
+    <input type="text" placeholder="Insurance Company Code" formControlName="insuranceCompanyCode" />
+    <input type="text" placeholder="Insurance Company Name" formControlName="insuranceCompanyName" />
+    <input type="text" placeholder="Invoice Number" formControlName="invoiceNumber" />
+  </div>
+
+  <div class="grid-row">
+    <input type="text" placeholder="WIP Number" formControlName="wipNumber" />
+  </div>
+
+  <div class="grid-row two-columns">
+    <div class="form-field">
+      <label>Full Claim Number</label>
+      <input type="text" placeholder="// / / /" formControlName="fullClaimNumber" />
+    </div>
+    <div class="form-field">
+      <label>Approval Form</label>
+      <input type="text" placeholder="// / / /" formControlName="approvalForm" />
+    </div>
+  </div>
+
+  <div class="grid-row single-column">
+    <div class="form-field">
+      <label>Customer Clearance Form</label>
+      <input type="text" placeholder="CL/1101/MJ/PCL/23/P/24/4318" formControlName="customerClearanceForm" />
+    </div>
+  </div>
+
+  <div class="submit-button-wrapper">
+    <button class="submit-btn" (click)="submit()" [disabled]="claimForm.invalid">
+      Submit
+    </button>
+    <button class="cancel-btn" (click)="cancel()">Cancel</button>
+  </div>
+</div> 

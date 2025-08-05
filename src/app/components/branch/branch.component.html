@@ -1,0 +1,597 @@
+ 
+  
+<!-- 
+  <div class="jeddah-container">
+  <header class="jeddah-header">
+    <h1>
+      {{ userBranchName ? userBranchName + ' Branch Data' : 'All Branches Data' }}
+    </h1>
+    <div class="profile-container">
+      <img src="/pic.png" alt="Profile" class="profile-pic" />
+      <div class="dropdown-icon" (click)="handleDropdownToggle()">▼</div>
+      <div class="dropdown-menu" *ngIf="isDropdownOpen">
+        <div class="dropdown-item">
+          👤 {{ loggedInUser || 'Branch User' }}
+        </div>
+        <div class="dropdown-item" (click)="handleLogout()">Logout</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="table-container">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>POS Code↓</th>
+          <th>Branch Name↓</th>
+          <th>Insurance Company Name↓</th>
+          <th>Invoice Number↓</th>
+          <th>VIP Number↓</th>
+          <th>Status↓</th>
+          <th>Plate↓</th>
+          <th>VIN↓</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of paginatedData">
+          <td>{{ item.posCode }}</td>
+          <td>{{ item.branchName }}</td>
+          <td>{{ item.insuranceCompanyName }}</td>
+          <td>{{ item.invoiceNumber }}</td>
+          <td>{{ item.vipNumber }}</td>
+          <td>{{ item.status }}</td>
+          <td>{{ item.plate }}</td>
+          <td>{{ item.vin }}</td>
+          <td>
+          <button (click)="viewDetails(item)">View</button> 
+           </td>
+        </tr>
+      </tbody>
+    </table>  -->
+
+    <!-- Optional UI Info -->
+<!-- <div className="pagination-buttons">
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+          >
+            ◀
+          </button>
+
+          {getPaginationButtons().map((page, index) => (
+            <button
+              key={index}
+              className={page === currentPage ? "active" : ""}
+              onClick={() => typeof page === "number" && setCurrentPage(page)}
+              disabled={page === "..."}>
+              {page}
+            </button>
+          ))}
+
+          <button
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+            disabled={currentPage === totalPages}
+          >
+            ▶
+          </button>
+        </div>
+  </div>
+</div>
+</div>  -->
+
+ <!-- <div class="jeddah-container">
+  <header class="jeddah-header">
+    <h1>
+      {{ userBranchName ? userBranchName + ' Branch Data' : 'All Branches Data' }}
+    </h1>
+    <div class="profile-container">
+      <img src="/pic.png" alt="Profile" class="profile-pic" />
+      <div class="dropdown-icon" (click)="handleDropdownToggle()">▼</div>
+      <div class="dropdown-menu" *ngIf="isDropdownOpen">
+        <div class="dropdown-item">
+          👤 {{ loggedInUser || 'Branch User' }}
+        </div>
+        <div class="dropdown-item" (click)="handleLogout()">Logout</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="table-container">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>POS Code↓</th>
+          <th>Branch Name↓</th>
+          <th>Insurance Company Name↓</th>
+          <th>Invoice Number↓</th>
+          <th>VIP Number↓</th>
+          <th>Status↓</th>
+          <th>Plate↓</th>
+          <th>VIN↓</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of paginatedData">
+          <td>{{ item.posCode }}</td>
+          <td>{{ item.branchName }}</td>
+          <td>{{ item.insuranceCompanyName }}</td>
+          <td>{{ item.invoiceNumber }}</td>
+          <td>{{ item.vipNumber }}</td>
+          <td>{{ item.status }}</td>
+          <td>{{ item.plate }}</td>
+          <td>{{ item.vin }}</td>
+          <td>
+           <button (click)="viewDetails(item)">View</button>
+           </td> 
+        </tr> 
+       </tbody>
+    </table> 
+
+    <!- <! Pagination Controls --> 
+     <!-- <div class="pagination-buttons">
+      <button
+        (click)="goToPreviousPage()"
+        [disabled]="currentPage === 1"
+      >
+        ◀
+      </button> -->
+
+      <!-- <ng-container *ngFor="let page of getPaginationButtons(); let i = index">
+        <button
+          [ngClass]="{ 'active': page === currentPage }"
+          [disabled]="page === '...'"
+          (click)="typeof page === 'number' && goToPage(page)">
+          {{ page }}
+        </button>
+      </ng-container>
+
+      <button
+        (click)="goToNextPage()"
+        [disabled]="currentPage === totalPages"
+      >
+        ▶
+      </button>
+    </div>   -->
+<!-- 
+    <div class="pagination-buttons">
+  <button
+    (click)="goToPreviousPage()"
+    [disabled]="currentPage === 1"
+  >
+    ◀
+  </button>
+
+  <ng-container *ngFor="let page of getPaginationButtons(); let i = index"> -->
+    <!-- Clickable number buttons -->
+    <!-- <button
+      *ngIf="typeof page === 'number'"
+      [ngClass]="{ 'active': page === currentPage }"
+      (click)="goToPage(page)">
+      {{ page }}
+    </button>
+
+    <!- Non-clickable ellipsis -->
+    <!-- <button
+      *ngIf="page === '...'"
+      disabled>
+      {{ page }}
+    </button>
+  </ng-container>
+
+  <button
+    (click)="goToNextPage()"
+    [disabled]="currentPage === totalPages"
+  >
+    ▶
+  </button>
+</div>
+
+  </div>
+</div>   
+
+  <!- <div class="jeddah-container">
+  <header class="jeddah-header">
+    <h1>
+      {{ userBranchName ? userBranchName + ' Branch Data' : 'All Branches Data' }}
+    </h1>
+    <div class="profile-container">
+      <img src="/pic.png" alt="Profile" class="profile-pic" />
+      <div class="dropdown-icon" (click)="handleDropdownToggle()">▼</div>
+      <div class="dropdown-menu" *ngIf="isDropdownOpen">
+        <div class="dropdown-item">👤 {{ loggedInUser || 'Branch User' }}</div>
+        <div class="dropdown-item" (click)="handleLogout()">Logout</div>
+      </div>
+    </div>
+  </header>
+
+   <div class="table-container">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>POS Code↓</th>
+          <th>Branch Name↓</th>
+          <th>Insurance Company Name↓</th>
+          <th>Invoice Number↓</th>
+          <th>VIP Number↓</th>
+          <th>Status↓</th>
+          <th>Plate↓</th>
+          <th>VIN↓</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of paginatedData">
+          <td>{{ item.posCode }}</td>
+          <td>{{ item.branchName }}</td>
+          <td>{{ item.insuranceCompanyName }}</td>
+          <td>{{ item.invoiceNumber }}</td>
+          <td>{{ item.vipNumber }}</td>
+          <td>{{ item.status }}</td>
+          <td>{{ item.plate }}</td>
+          <td>{{ item.vin }}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+<div class="pagination-buttons">
+  <button
+    (click)="goToPreviousPage()"
+    [disabled]="currentPage === 1"
+  >
+    ◀
+  </button>
+
+  <ng-container *ngFor="let page of getPaginationButtons(); let i = index">
+    <button
+      *ngIf="typeof page === 'number'"
+      [class.active]="page === currentPage"
+      (click)="goToPage(page)"
+    >
+      {{ page }}
+    </button>
+
+    <button
+      *ngIf="page === '...'"
+      disabled
+    >
+      {{ page }}
+    </button>
+  </ng-container>
+
+  <button
+    (click)="goToNextPage()"
+    [disabled]="currentPage === totalPages"
+  >
+    ▶
+  </button>
+</div>  -->
+
+<!-- < <div class="branch-container"> -->
+  <!-- <h2 class="text-xl font-bold mb-4">Branch Claims</h2> -->
+
+  <!-- <table class="w-full border border-gray-300"> -->
+    <!-- <thead class="bg-gray-200"> -->
+      <!-- <tr> -->
+        <!-- <th class="p-2 border">S.No</th>
+        <th class="p-2 border">Name</th>
+        <th class="p-2 border">Contact</th>
+        <th class="p-2 border">Company</th>
+        <th class="p-2 border">Branch</th>
+        <th class="p-2 border">Policy No</th>
+        <th class="p-2 border">Vehicle No</th>
+        <th class="p-2 border">Date</th>
+        <th class="p-2 border">Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of paginatedData; let i = index">
+        <td class="p-2 border">{{ (currentPage - 1) * rowsPerPage + i + 1 }}</td>
+        <td class="p-2 border">{{ item.clientName }}</td>
+        <td class="p-2 border">{{ item.clientContactNo }}</td>
+        <td class="p-2 border">{{ item.insuranceCompanyName }}</td>
+        <td class="p-2 border">{{ item.branchName }}</td>
+        <td class="p-2 border">{{ item.policyNo }}</td>
+        <td class="p-2 border">{{ item.vehicleRegistrationNo }}</td>
+        <td class="p-2 border">{{ item.date }}</td>
+        <td class="p-2 border">{{ item.remarks }}</td>
+      </tr>
+      <tr *ngIf="paginatedData.length === 0">
+        <td colspan="9" class="p-4 text-center text-gray-500">
+          No data found for your branch.
+        </td>
+      </tr> -->
+    <!-- </tbody>
+  </table> -->
+
+  <!-- <!- <!- PAGINATION -->  
+   <!-- <div class="pagination-buttons mt-4 flex justify-center items-center gap-1">
+    <button
+      class="px-3 py-1 border rounded hover:bg-gray-200"
+      (click)="goToPreviousPage()"
+      [disabled]="currentPage === 1"
+    >
+      ◀
+    </button> 
+
+    <ng-container *ngFor="let page of paginationButtons">
+      <button
+        *ngIf="typeof page === 'number'"
+        class="px-3 py-1 border rounded hover:bg-gray-200"
+        [ngClass]="{ 'bg-blue-500 text-white': currentPage === page }"
+        (click)="goToPage(page)"
+      >
+        {{ page }}
+      </button> -->
+
+      <!-- <button
+        *ngIf="page === '...'"
+        class="px-3 py-1 border rounded text-gray-400"
+        disabled
+      >
+        ...
+      </button>
+    </ng-container>
+
+     <button
+      class="px-3 py-1 border rounded hover:bg-gray-200"
+      (click)="goToNextPage()"
+      [disabled]="currentPage === totalPages"
+    >
+      ▶
+    </button>
+  </div>
+</div>  --> 
+<!-- 
+<div class="jeddah-container">
+  <!- ====== HEADER ====== -->
+  <!-- <div class="jeddah-header">
+    <h1>Branch Claims</h1>
+    <div class="profile-container">
+      <img src="assets/profile.jpg" alt="Profile" class="profile-pic" />
+      <i class="dropdown-icon">&#9662;</i>
+    </div>
+  </div>
+
+  <!- ====== TABLE SECTION ====== -->
+  <!-- <div class="table-container">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>Contact</th>
+          <th>Company</th>
+          <th>Branch</th>
+          <th>Policy&nbsp;No</th>
+          <th>Vehicle&nbsp;No</th>
+          <th>Date</th>
+          <th>Remarks</th>
+        </tr>
+      </thead> -->
+
+      <!-- <tbody>
+        <tr *ngFor="let item of paginatedData; let i = index">
+          <td>{{ (currentPage - 1) * rowsPerPage + i + 1 }}</td>
+          <td>{{ item.clientName }}</td>
+          <td>{{ item.clientContactNo }}</td>
+          <td>{{ item.insuranceCompanyName }}</td>
+          <td>{{ item.branchName }}</td>
+          <td>{{ item.policyNo }}</td>
+          <td>{{ item.vehicleRegistrationNo }}</td>
+          <td>{{ item.date }}</td>
+          <td>{{ item.remarks }}</td>
+        </tr>
+
+        <tr *ngIf="paginatedData.length === 0">
+          <td colspan="9" class="p-4 text-center text-gray-500">
+            No data found for this branch.
+          </td>
+        </tr>
+      </tbody>
+    </table> -->
+
+    <!-- ====== PAGINATION ====== -->
+    <!-- <div class="pagination-buttons">
+      <button (click)="goToPreviousPage()" [disabled]="currentPage === 1">
+        ◀
+      </button> -->
+<!-- 
+      <ng-container *ngFor="let page of paginationButtons">
+        <button
+          *ngIf="typeof page === 'number'"
+          (click)="goToPage(page)"
+          [ngClass]="{ 'active': currentPage === page }">
+          {{ page }}
+        </button>
+
+        <button *ngIf="page === '...'" disabled>
+          ...
+        </button>
+      </ng-container>
+
+      <button (click)="goToNextPage()" [disabled]="currentPage === totalPages">
+        ▶
+      </button>
+    </div>
+  </div>
+</div>  -->
+ 
+
+<!-- <div class="jeddah-container">
+  <header class="jeddah-header">
+    <h1>
+      {{ userBranchName ? userBranchName + ' Branch Data' : 'All Branches Data' }}
+    </h1>
+    <div class="profile-container">
+      <img src="/pic.png" alt="Profile" class="profile-pic" />
+      <div class="dropdown-icon" (click)="handleDropdownToggle()">▼</div>
+      <div class="dropdown-menu" *ngIf="isDropdownOpen">
+        <div class="dropdown-item">
+          👤 {{ loggedInUser || 'Branch User' }}
+        </div>
+        <div class="dropdown-item" (click)="handleLogout()">Logout</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="table-container">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>POS Code↓</th>
+          <th>Branch Name↓</th>
+          <th>Insurance Company Name↓</th>
+          <th>Invoice Number↓</th>
+          <th>VIP Number↓</th>
+          <th>Status↓</th>
+          <th>Plate↓</th>
+          <th>VIN↓</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of paginatedData">
+          <td>{{ item.posCode }}</td>
+          <td>{{ item.branchName }}</td>
+          <td>{{ item.insuranceCompanyName }}</td>
+          <td>{{ item.invoiceNumber }}</td>
+          <td>{{ item.vipNumber }}</td>
+          <td>{{ item.status }}</td>
+          <td>{{ item.plate }}</td>
+          <td>{{ item.vin }}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!- Pagination Controls -->
+    <!-- <div class="pagination-buttons">
+      <button
+        (click)="goToPreviousPage()"
+        [disabled]="currentPage === 1"
+        class="pagination-btn"
+      >
+        ◀
+      </button> -->
+
+      <!-- <ng-container *ngFor="let page of getPaginationButtons(); let i = index">
+        <button
+          *ngIf="typeof page === 'number'"
+          class="pagination-btn"
+          [ngClass]="{ 'active-page': page === currentPage }"
+          (click)="goToPage(page)"
+        >
+          {{ page }}
+        </button>
+
+        <button *ngIf="page === '...'" class="pagination-btn disabled" disabled>
+          ...
+        </button>
+      </ng-container>
+
+      <button
+        (click)="goToNextPage()"
+        [disabled]="currentPage === totalPages"
+        class="pagination-btn"
+      >
+        ▶
+      </button>
+    </div>
+  </div> -->
+<!-- </div>  -->
+
+
+
+<div class="jeddah-container">
+  <!-- ─── HEADER ───────────────────────────────────────────────➤ -->
+  <header class="jeddah-header">
+    <h1>
+      {{ userBranchName ? (userBranchName + ' Branch Data') : 'All Branches Data' }}
+    </h1>
+
+    <div class="profile-container">
+      <img src="/pic.png" alt="Profile" class="profile-pic" />
+      <div class="dropdown-icon" (click)="handleDropdownToggle()">▼</div>
+
+      <div class="dropdown-menu" *ngIf="isDropdownOpen">
+        <div class="dropdown-item">👤 {{ loggedInUser || 'Branch User' }}</div>
+        <div class="dropdown-item" (click)="handleLogout()">Logout</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── TABLE ────────────────────────────────────────────────➤ -->
+  <div class="table-container">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>POS Code ↓</th>
+          <th>Branch Name ↓</th>
+          <th>Insurance Company Name ↓</th>
+          <th>Invoice Number ↓</th>
+          <th>VIP Number ↓</th>
+          <th>Status ↓</th>
+          <th>Plate ↓</th>
+          <th>VIN ↓</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of paginatedData">
+          <td>{{ item.posCode }}</td>
+          <td>{{ item.branchName }}</td>
+          <td>{{ item.insuranceCompanyName }}</td>
+          <td>{{ item.invoiceNumber }}</td>
+          <td>{{ item.vipNumber }}</td>
+          <td>{{ item.status }}</td>
+          <td>{{ item.plate }}</td>
+          <td>{{ item.vin }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ─── PAGINATION ──────────────────────────────────────────➤ -->
+    <div class="pagination-buttons">
+      <button
+        class="pagination-btn"
+        (click)="goToPreviousPage()"
+        [disabled]="currentPage === 1"
+      >
+        ◀
+      </button>
+
+      <!-- Dynamically-generated page / dot buttons -->
+      <ng-container *ngFor="let btn of getPaginationButtons()">
+        <!-- Page number button -->
+        <button
+          *ngIf="btn as pageNumber; else dotsTpl"
+          class="pagination-btn"
+          [ngClass]="{ 'active-page': pageNumber === currentPage }"
+          (click)="goToPage(pageNumber)"
+        >
+          {{ pageNumber }}
+        </button>
+
+        <!-- Ellipsis button template -->
+        <ng-template #dotsTpl>
+          <button class="pagination-btn disabled" disabled>…</button>
+        </ng-template>
+      </ng-container>
+
+      <button
+        class="pagination-btn"
+        (click)="goToNextPage()"
+        [disabled]="currentPage === totalPages"
+      >
+        ▶
+      </button>
+    </div>
+  </div>
+</div>
+

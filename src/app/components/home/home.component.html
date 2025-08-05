@@ -1,0 +1,343 @@
+
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <img src="assets/images/image.png" alt="Logo" class="logo" />
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li class="dropdown" (mouseenter)="navDropdownOpen = true" (mouseleave)="navDropdownOpen = false">
+        <a href="#">About <span class="arrow">&#9662;</span></a>
+        <ul class="dropdown-menu" [class.open]="navDropdownOpen">
+          <li><a href="#">Summary</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Request Service</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Solutions</a></li>
+      <li><a href="#">Platforms</a></li>
+      <li><a href="#">Articles</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="lang-btn">العربية</button>
+      <button class="request-btn">Request Service</button>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-left">
+      <h1>
+        Transforming the <span class="highlight">Future</span> <br>
+        with Advanced Technology Solutions
+      </h1>
+      <p>
+        Providing cutting-edge digital solutions, AI-powered platforms, and smart business automation tools.
+      </p>
+      <button class="primary-btn">Explore Our Solutions</button>
+    </div>
+    <div class="hero-right">
+      <img src="assets/images/homeheroimg.png" alt="Hero" class="hero-img" />
+    </div>
+  </div>
+</section>
+<!-- Strategic Growth Section -->
+<section class="growth">
+  <div class="container">
+    <h2>
+      Strategic Growth For a Digital Future
+      <img src="assets/images/homeicon.png" alt="" />
+    </h2>
+    <div class="growth-row">
+      <div class="growth-card">
+        <img src="assets/images/homeicon2.png" alt="Analytics" />
+        <h4>Harnessing Analytics for Success</h4>
+        <p>Empower your business with powerful analytics and data-driven insights for smart decision making.</p>
+      </div>
+      <div class="growth-card">
+        <img src="assets/images/homeicon3.png" alt="Connect" />
+        <h4>Connecting Across All Platforms</h4>
+        <p>Seamlessly integrate and connect your business across multiple platforms for unified operations.</p>
+      </div>
+      <div class="growth-card">
+        <img src="assets/images/homeicon1.png" alt="Performance" />
+        <h4>Maximizing Conversions & Engagement</h4>
+        <p>Drive higher conversions and engagement with optimized digital strategies and tools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statistics & Insights Section -->
+<section class="stats">
+  <div class="container">
+    <h2>
+      Statistics & Insights
+      <img src="assets/images/title-icon.png" alt="" />
+    </h2>
+    <div class="stats-summary">
+      <div class="stat-card" *ngFor="let stat of stats">
+        <div class="stat-value">{{ stat.value }}</div>
+        <div class="stat-label">{{ stat.label }}</div>
+      </div>
+    </div>
+    <div class="stats-graphs">
+      <div class="stats-graph-card">
+        <h5>Wajjad Tech’s Growth & Success Over Time</h5>
+        <p>Our consistent growth is a testament to our commitment to excellence and innovation. Since 2015, we’ve delivered 15,000+ projects for 500+ clients across 50+ countries.</p>
+      </div>
+      <div class="stats-graph-card">
+        <h5>Wajjad Tech</h5>
+        <img src="assets/images/graph.png" alt="Growth Graph" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Digital Solutions Tabs Section -->
+<!-- <section class="digital-solutions">
+  <div class="container">
+    <h2>
+      Our Expertise in Digital Solutions
+      <img src="assets/images/title-icon.png" alt="" />
+    </h2>
+    <div class="digital-tabs">
+      <button
+        *ngFor="let tab of digitalSolutionsTabs; let i = index"
+        [class.active]="selectedDigitalTab === i"
+        (click)="selectedDigitalTab = i"
+      >
+        {{ tab }}
+      </button>
+    </div>
+    <div class="digital-tab-content">
+      <div *ngIf="selectedDigitalTab === 0">
+        <div class="digital-cards">
+          <div class="digital-card" *ngFor="let card of digitalCards">
+            <h4>{{ card.title }}</h4>
+            <p>{{ card.desc }}</p>
+            <a [href]="card.link">LEARN MORE</a>
+          </div>
+        </div>
+      </div>
+      <!- Add more tab contents as needed -->
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </section> --> 
+
+<section class="expertise-section">
+    <h3>Our Expertise in Digital Solutions</h3>
+    <div class="tabs">
+      <span class="active">Digital Marketing</span>
+      <span>Custom Software Development</span>
+      <span>UI/UX & Branding Services</span>
+      <span>IT Consulting & Support</span>
+      <span>Cybersecurity & Data Protection</span>
+    </div>
+    <div class="expertise-cards">
+      <div class="expertise-card">
+        <h4>Digital Marketing Solutions</h4>
+        <p>Higher brand awareness through targeted social media campaigns, SEO, and PPC advertising.</p>
+        <a href="#">LEARN MORE →</a>
+      </div>
+      <div class="expertise-card">
+        <h4>SEO & Content Marketing</h4>
+        <p>Boost website visibility with strategic keyword optimization and high-quality content that ranks.</p>
+        <a href="#">LEARN MORE →</a>
+      </div>
+      <div class="expertise-card">
+        <h4>Ads & Performance Marketing</h4>
+        <p>Drive Facebook growth with targeted ads on Google, Facebook, and other platforms to maximize ROI.</p>
+        <a href="#">LEARN MORE →</a>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Leading Technology Solutions Section -->
+<!-- <section class="solutions">
+  <div class="container">
+    <h2>
+      Our Leading Technology Solutions
+      <img src="assets/images/title-icon.png" alt="" />
+    </h2>
+    <div class="solutions-row">
+      <div
+        class="solution-card"
+        *ngFor="let sol of solutions"
+        [class.active]="sol.active"
+      >
+        <img [src]="sol.icon" alt="icon" />
+        <h4>{{ sol.title }}</h4>
+        <p>{{ sol.desc }}</p>
+        <a href="#">LEARN MORE</a>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="solutions">
+  <div class="container">
+    <h2>
+      Our Leading Technology Solutions
+      <img src="assets/images/title-icon.png" alt="" />
+    </h2>
+    <div class="solutions-row">
+      <div
+        class="solution-card"
+        *ngFor="let sol of solutions; let i = index"
+        [class.active]="sol.active"
+      >
+        <img [src]="sol.icon" alt="icon" />
+        <h4>{{ sol.title }}</h4>
+        <p>{{ sol.desc }}</p>
+        <a href="#">LEARN MORE</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Customers Testimonial Section -->
+<!-- <section class="testimonial">
+  <div class="container testimonial-inner">
+    <h2>
+      Our Customers
+      <img src="assets/images/title-icon.png" alt="" />
+    </h2>
+    <div class="testimonial-content">
+      <p>{{ testimonial.text }}</p>
+      <div class="testimonial-author">
+        <img [src]="testimonial.avatar" alt="Avatar" />
+        <div>
+          <div class="author-name">{{ testimonial.author }}</div>
+          <div class="author-role">{{ testimonial.role }}</div>
+        </div>
+      </div>
+      <div class="testimonial-rating">
+        <span *ngFor="let star of [1,2,3,4,5]">&#9733;</span>
+      </div>
+    </div>
+    <div class="testimonial-arrows">
+      <button>&larr;</button>
+      <button>&rarr;</button>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="testimonial">
+  <div class="container testimonial-inner">
+    <h2>
+      Our Customers
+      <img src="assets/images/title-icon.png" alt="" />
+    </h2>
+    <div class="testimonial-card">
+      <div class="testimonial-topbar"></div>
+      <p class="testimonial-text">
+        Lorem ipsum dolor sit amet consectetur. Pellentesque non fermentum vestibulum at fermentum erat. Ut massa dictum quis massa aliquet venenatis.
+      </p>
+      <div class="testimonial-rating">
+        <span *ngFor="let star of [1,2,3,4,5]">&#9733;</span>
+      </div>
+      <div class="testimonial-user">
+        <img src="assets/images/saudi.png" alt="Avatar" />
+        <div>
+          <div class="author-name">Wajjad</div>
+          <div class="author-role">Marketing Manager at Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-arrows">
+      <button>&larr;</button>
+      <button>&rarr;</button>
+    </div>
+  </div>
+</section>
+<!-- Partners Section -->
+<!-- <section class="partners">
+  <div class="container">
+    <h2>
+      Our Partners
+      <img src="assets/images/title-icon.png" alt="" />
+    </h2>
+    <div class="partners-row">
+      <img *ngFor="let partner of partners" [src]="partner" alt="Partner" />
+    </div>
+  </div>
+</section> -->
+
+
+<section class="partners">
+  <div class="container">
+    <h2>
+                   Our Partners
+      <img src="assets/images/title-icon.png" alt="" />
+    </h2>
+    <div class="partners-row">
+      <div class="partner-logo" *ngFor="let partner of partners">
+        <img [src]="partner" alt="Partner" />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Newsletter Section -->
+<section class="newsletter">
+  <div class="container newsletter-inner">
+    <div class="newsletter-icon">
+      <img src="assets/images/news.png" alt="Newsletter" />
+    </div>
+    <h3>Subscribe to Our Newsletter</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Your Email" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-main">
+    <div class="footer-brand">
+      <img src="assets/images/image.png" alt="Logo" class="footer-logo" />
+      <p>Lorem ipsum dolor sit amet consectetur. Quam cras massa fermentum in quis neque elementum. Tortor bibendum a nulla orci morbi.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <div class="footer-link-title">Services</div>
+        <a href="#">Service v1</a>
+        <a href="#">Service v2</a>
+        <a href="#">Service v3</a>
+        <a href="#">Service v4</a>
+      </div>
+      <div>
+        <div class="footer-link-title">Products</div>
+        <a href="#">Omara</a>
+        <a href="#">Maqeem</a>
+        <a href="#">Munaqid</a>
+      </div>
+      <div>
+        <div class="footer-link-title">Quick Links</div>
+        <a href="#">Links</a>
+        <a href="#">Links</a>
+        <a href="#">Links</a>
+      </div>
+      <div>
+        <div class="footer-link-title">Contact</div>
+        <a href="#">Contact</a>
+        <a href="#">Contact</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>All Rights Reserved ©Wajjad</span>
+    <span>Privacy And Policy</span>
+  </div>
+</footer>

@@ -1,0 +1,134 @@
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <img src="assets/images/image.png" alt="Logo" class="logo" />
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Solutions</a></li>
+      <li><a href="#">Platforms</a></li>
+      <li><a href="#">Articles</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="lang-btn">العربية</button>
+      <button class="request-btn">Request Service</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <span>Knowledge</span>
+  <span class="breadcrumb-sep">/</span>
+  <span class="breadcrumb-link">Press Releases & Media Coverage</span>
+</div>
+
+<!-- Page Title -->
+<div class="page-title">
+  <h1>Press Releases & Media Coverage <img src="assets/images/title-icon.png" alt="" /></h1>
+</div>
+
+<!-- Main Section: Featured + Sidebar -->
+<div class="main-section">
+  <div class="featured">
+    <img [src]="featured.image" alt="Featured" class="featured-img" />
+    <div class="featured-overlay">
+      <div class="featured-location">{{ featured.location }}</div>
+      <div class="featured-title">{{ featured.title }}</div>
+      <div class="featured-meta">{{ featured.time }} by {{ featured.author }}</div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-tabs">
+      <span class="active">Latest Press Realses</span>
+      <span>Popular</span>
+      <span>Most Viewed</span>
+    </div>
+    <div class="sidebar-list">
+      <div class="sidebar-item" *ngFor="let item of latest">
+        <img [src]="item.image" alt="" class="sidebar-thumb" />
+        <div class="sidebar-info">
+          <div class="sidebar-title">{{ item.title }}</div>
+          <div class="sidebar-meta">{{ item.time }} &nbsp; By {{ item.author }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cards Grid -->
+<div class="cards-section">
+  <div class="cards-grid">
+    <div class="card" *ngFor="let card of cards">
+      <img [src]="card.image" alt="" class="card-img" />
+      <div class="card-content">
+        <div class="card-title">{{ card.title }}</div>
+        <div class="card-desc">{{ card.desc }}</div>
+        <div class="card-meta">
+          <img [src]="card.avatar" alt="avatar" class="card-avatar" />
+          <div>
+            <div class="card-author">{{ card.author }}</div>
+            <div class="card-date">{{ card.date }}</div>
+          </div>
+          <button class="card-arrow">
+            <span>&#8594;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pagination -->
+<div class="pagination">
+  <button class="page-btn" [class.active]="currentPage === page" *ngFor="let page of pages">{{ page }}</button>
+  <button class="page-btn">&gt;</button>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img src="assets/images/image.png" alt="Logo" class="footer-logo" />
+      <p>Lorem ipsum dolor sit amet consectetur. Quam cras massa fermentum in quis neque elementum. Tortor bibendum a nulla orci morbi.</p>
+      <div class="footer-social">
+        <a href="#"><img src="assets/images/fb.svg" alt="fb" /></a>
+        <a href="#"><img src="assets/images/in.svg" alt="in" /></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <div>
+        <div class="footer-link-title">Services</div>
+        <a href="#">Service v1</a>
+        <a href="#">Service v1</a>
+        <a href="#">Service v1</a>
+        <a href="#">Service v1</a>
+      </div>
+      <div>
+        <div class="footer-link-title">Products</div>
+        <a href="#">Omara</a>
+        <a href="#">Maqeem</a>
+        <a href="#">Munaqid</a>
+      </div>
+      <div>
+        <div class="footer-link-title">Quick Links</div>
+        <a href="#">Links</a>
+        <a href="#">Links</a>
+        <a href="#">Links</a>
+      </div>
+      <div>
+        <div class="footer-link-title">Contact</div>
+        <a href="#">Contact</a>
+        <a href="#">Contact</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>All Rights Reserved ©Wajjad</span>
+    <span>Privacy And Policy</span>
+  </div>
+</footer>

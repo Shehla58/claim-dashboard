@@ -1,0 +1,150 @@
+
+
+<div class="dashboard-container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Welcome!</h1>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+      <img src="/pic.png" alt="Profile" class="profile-pic" />
+      <div class="dropdown-icon" (click)="handleDropdownToggle()">▼</div>
+
+      <div class="dropdown-menu" *ngIf="isDropdownOpen">
+        <div class="dropdown-item">
+          👤 {{ loggedInUser || 'Branch User' }}
+        </div>
+        <div class="dropdown-item" (click)="handleLogout()">Logout</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload Section -->
+  <div class="upload-section">
+    <div class="upload-icon">
+      <i class="cloud-icon" style="font-size: 48px;">⬆️</i>
+    </div>
+
+    <div class="upload-buttons">
+      <button class="upload-single" (click)="uploadSingle()">Upload Single</button>
+      <button class="upload-bulk" (click)="fileInput.click()">Upload Bulk</button>
+      <input type="file" #fileInput hidden (change)="onFileSelected($event)" />
+    </div>
+
+    <button class="submit-button" (click)="submitFile()">Submit</button>
+  </div>
+
+  <!-- Review Section -->
+  <div class="review-section">
+    <div class="review-header">
+      <div class="review-title">Ready For Review</div>
+      <div class="reviewed-button" (click)="markAsReviewed()">Reviewed</div>
+    </div>
+    
+    <div class="search-container">
+  <input
+    type="text"
+    class="search-bar"
+    placeholder="Search Claim here..."
+    [(ngModel)]="searchQuery"
+    (ngModelChange)="handleSearchQueryChange($event)"
+  />
+</div>
+
+
+    <div class="review-table-container">
+      <table class="review-table">
+        <thead>
+          <tr>
+            <th>Branch Code</th>
+            <th>POS Code</th>
+            <th>Branch Name</th>
+            <th>Insurance Company Code</th>
+            <th>Insurance Company Name</th>
+            <th>Invoice Number</th>
+            <th>WIP Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of paginatedData" (click)="openClaimForm(row)">
+            <td>{{ row.branchId }}</td>
+            <td>{{ row.posCode }}</td>
+            <td>{{ row.branchId }}</td>
+            <td>{{ row.insuranceCompanyId
+ }}</td>
+            <td>{{ row.insuranceCompanyId }}</td>
+            <td>{{ row.invoiceNumber }}</td>
+            <td>{{ row.wipNumber }}</td>
+          </tr>
+        </tbody>
+      </table>
+<app-claim-form
+  *ngIf="showClaimForm"
+  [claim]="selectedClaim"
+  (formSubmit)="handleFormSubmit($event)"
+  (close)="closeClaimForm()"
+></app-claim-form>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button
+          class="page-button"
+          (click)="handlePageChange(currentPage - 1)"
+          [disabled]="currentPage === 1"
+        >
+          Previous
+        </button>
+
+        <button
+          *ngIf="currentPage > 3"
+          class="page-button"
+          (click)="handlePageChange(1)"
+        >
+          1
+        </button>
+
+        <span class="dots" *ngIf="currentPage > 4">...</span>
+
+        <ng-container *ngFor="let page of getPaginationRange()">
+          <button
+            class="page-button"
+            [class.active]="currentPage === page"
+              (click)="handlePageChange(page)"  
+          >
+            {{ page }}
+          </button>
+        </ng-container>
+
+        <span class="dots" *ngIf="currentPage < totalPages - 2">...</span>
+
+        <button
+          *ngIf="currentPage < totalPages - 1"
+          class="page-button"
+          (click)="handlePageChange(totalPages)"
+        >
+          {{ totalPages }}
+        </button>
+
+        <button
+          class="page-button"
+          (click)="handlePageChange(currentPage + 1)"
+          [disabled]="currentPage === totalPages"
+        >
+          Next
+        </button>
+
+        <span class="show-text">Show</span>
+        <select
+          class="rows-per-page"
+          [(ngModel)]="rowsPerPage"
+          (change)="setRowsPerPage($any($event.target).value)"
+        >
+          <option [value]="10">10</option>
+          <option [value]="20">20</option>
+          <option [value]="50">50</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
